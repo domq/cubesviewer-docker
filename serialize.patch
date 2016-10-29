@@ -1,0 +1,12 @@
+Cherry-picked from https://github.com/epfl-sti/cubesviewer/commit/69a7476a66041e565b53452a44b3d135b1bc11d7
+
+diff --git a/src/web/cvapp/cubesviewer/api/view.py b/src/web/cvapp/cubesviewer/api/view.py
+index 744d24f..1f9f6c4 100644
+--- a/cvapp/cubesviewer/api/view.py
++++ b/cvapp/cubesviewer/api/view.py
+@@ -38,6 +38,7 @@ from django.views.decorators.csrf import csrf_exempt
+ class CubesViewSerializer(serializers.ModelSerializer):
+     class Meta:
+         model = CubesView
++        fields = '__all__'
+         #fields = ('url', 'username', 'email', 'groups')
