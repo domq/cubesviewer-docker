@@ -18,8 +18,7 @@ ADD serialize.patch /cubesviewer
 WORKDIR /cubesviewer
 RUN patch -p1 < serialize.patch
 
-# Persistent state (logins, saved queries) go into an sqlite database there:
-VOLUME /cubesviewer/cvapp
+ADD settings.py /cubesviewer/cvapp/cvapp/settings.py
 
 ADD run.sh /run.sh
 CMD [ "/run.sh" ]

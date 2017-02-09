@@ -14,7 +14,7 @@ if [ -n "$CUBESVIEWER_BACKEND_URL" ]; then
     perl -i -pe 'next unless m/^CUBESVIEWER_BACKEND_URL *=/; $_ = qq(CUBESVIEWER_BACKEND_URL="$ENV{CUBESVIEWER_BACKEND_URL}"\n)' $settings_file
 fi
 
-$manage_script migrate
+yes yes | $manage_script migrate
 
 # To load some initial data (e.g. accounts), mount a directory
 # containing initdata.sql as a Docker volume under /initdata e.g.
